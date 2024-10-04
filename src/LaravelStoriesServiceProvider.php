@@ -11,20 +11,23 @@ class LaravelStoriesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Публикация конфигурации
+        // Publish configuration
         $this->publishes([
             __DIR__ . '/../config/stories.php' => config_path('stories.php'),
         ], 'config');
 
-        // Загрузка миграций
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        // Publish migrations
+        $this->publishes([
+            __DIR__ . '/../database/migrations/' => database_path('migrations'),
+        ], 'migrations');
 
-        // Загрузка маршрутов
+        // Load routes
         $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
 
-        // Регистрация политик
+        // Register policies
         $this->registerPolicies();
     }
+
 
     public function register()
     {
