@@ -1,0 +1,25 @@
+{
+  "name": "mnaimjons/laravel-stories",
+  "description": "A Laravel package to add stories functionality to any model.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mnaimjons\\LaravelStories\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "illuminate/support": "^8.0|^9.0|^10.0",
+    "spatie/laravel-medialibrary": "^10.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mnaimjons\\LaravelStories\\LaravelStoriesServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
